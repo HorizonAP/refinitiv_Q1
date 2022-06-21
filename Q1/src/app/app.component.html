@@ -1,0 +1,17 @@
+<html >
+  <body>
+    <span class="row">
+      <div class="column" style="display: block; border: 5px;border-color:black;width: 200px;">
+        <input  type="number" digit (change)="onKey($event)" [(ngModel)]="input" min="0">
+</div>
+      <div class="column" style="display: block; border: 5px;border-color:black;width: calc(100% - (200px + 300px));">
+        <select [(ngModel)]="selectedValue" (change)="cal()">
+          <option *ngFor="let option of options" [value]="option.id">
+            {{option.name}}
+          </option>
+        </select>
+      </div>
+      <div class="column" style="display: block;border: 5px;border-color:black;width: 300px;">{{flag}}</div>
+    </span>
+  </body>
+</html>
